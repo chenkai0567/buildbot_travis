@@ -11,9 +11,10 @@ fi
 
 if [ -z "$BUILDBOT_CONFIG_URL" ]
 then
-    echo "No master.cfg found nor $$BUILDBOT_CONFIG_URL !"
-    echo "Please provide a master.cfg file in $B or provide a $$BUILDBOT_CONFIG_URL variable via -e"
-    exit 1
+    ln -sf /usr/src/buildbot_travis/example/master.cfg $B/master.cfg
+    #echo "No master.cfg found nor $$BUILDBOT_CONFIG_URL !"
+    #echo "Please provide a master.cfg file in $B or provide a $$BUILDBOT_CONFIG_URL variable via -e"
+    #exit 1
 
 else
     BUILDBOT_CONFIG_DIR=${BUILDBOT_CONFIG_DIR:-config}
